@@ -1,1 +1,4 @@
-Not much to loot at just yet. Still working on this, so please check back later for a more bug-proof version!
+This is a simple lava lamp style navigation menu, built with jQuery. To use, simply target some nav ul, and call "spasticNav()."
+
+$('#nav').spasticNav();
+
