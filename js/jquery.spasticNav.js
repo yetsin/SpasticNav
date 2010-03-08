@@ -3,11 +3,11 @@
 	$.fn.spasticNav = function(options) {
 
 		options = $.extend({
-            overlap : 10,
-            speed : 1500,
+            overlap : 20,
+            speed : 500,
             reset : 4000,
             color : '#0b2b61',
-            easing : 'easeOutElastic'
+            easing : 'easeOutExpo'
 		}, options);
 
 		return this.each(function() {
@@ -19,30 +19,27 @@
             $('<li id="blob"></li>').css({
                 width : currentPageItem.outerWidth(),
                 height : currentPageItem.outerHeight() + options.overlap,
-                left : currentPageItem.position().left - 2,
+                left : currentPageItem.position().left,
                 top : currentPageItem.position().top - options.overlap / 2,
                 backgroundColor : options.color
             }).appendTo('#nav');
 
             blob = $('#blob');
 
-            nav.hover(function() {
+            nav.find('li').hover(function() {
                 clearTimeout(reset);
-                $(this).mousemove(function(e) {
-                    if ( $(e.target).is('a') ) {
-                        blob.animate(
-                            {
-                                left : $(e.target).position().left - 2,
-                                width : $(e.target).parent('li').width()
-                            },
-                            {
-                                duration: options.speed,
-                                easing : options.easing,
-                                queue : false
-                            }
-                        );
+                blob.animate(
+                    {
+                        left : $(this).position().left,
+                        width : $(this).width()
+                    },
+                    {
+                        duration: options.speed,
+                        easing : options.easing,
+                        queue : false
                     }
-                }); // end mousemove
+                );
+
             }, function(e) {
                 // mouse out
                 reset = setTimeout(function() {
