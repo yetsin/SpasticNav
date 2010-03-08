@@ -29,7 +29,8 @@ ul, li {
 #nav li {
     float: left;
     list-style: none;
-border-right: 1px solid black;
+border-right: 1px solid #4a4a4a;
+border-left: 1px solid black;
 
 }
 
@@ -43,6 +44,7 @@ border-right: 1px solid black;
     font-family: helvetica, arial, sans-serif;
     text-decoration: none;
     padding: 30px 45px;
+    width: 100%;
 }
 
 #selected {

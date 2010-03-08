@@ -21,17 +21,19 @@ Site.prototype.navBlob = function() {
     nav.hover(function() {
         clearTimeout(reset);
         $(this).mousemove(function(e) {
-            blob.animate(
-                {
-                    width : $(e.target).parent('li').width(),
-                    left : e.pageX - $(e.target).parent('li').width() / 2
-                },
-                {
-                    duration: 'slow',
-                    easing : 'easeOutCirc',
-                    queue : false
-                }
-            );
+            console.log('pageX: ' + e.pageX + '; navWidth: ' + nav.width());
+                blob.animate(
+                    {
+                        width : $(e.target).width(),
+                        left : (e.pageX > nav.width()) ? blob.left : e.pageX - $(e.target).parent('li').width() / 2
+                    },
+                    {
+                        duration: 'slow',
+                        easing : 'easeOutCirc',
+                        queue : false
+                    }
+                );
+
         }); // end mousemove
     }, function(e) {
         // mouse out
@@ -44,7 +46,7 @@ Site.prototype.navBlob = function() {
                 width : currentPageItem.outerWidth(),
                 left: currentPageItem.position().left
             });
-        }, 4000);
+        }, 2000);
     });
 };
 new Site();
