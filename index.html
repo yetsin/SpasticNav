@@ -13,6 +13,7 @@
     <ul id="nav">
         <li id="selected"><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="#">Blog</a></li>
         <li><a href="#">More About My Portfolio</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
@@ -24,7 +25,11 @@
 <script type="text/javascript" src="js/jquery.spasticNav.js"></script>
 
 <script type="text/javascript">
-    $('#nav').spasticNav();
+    $('#nav').spasticNav({
+    	easing : 'linear',
+    	speed : 300,
+    	overlap : 30
+    });
 </script>
 </body>
 </html>

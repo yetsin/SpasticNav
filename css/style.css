@@ -1,5 +1,5 @@
 #container {
-    width: 1000px;
+    width: 1200px;
     margin: 100px auto;
 }
 ul, li {
@@ -46,4 +46,5 @@ ul, li {
     text-decoration: none;
     padding: 30px 45px;
     width: 100%;
+
 }

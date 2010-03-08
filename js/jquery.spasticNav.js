@@ -3,10 +3,11 @@
 	$.fn.spasticNav = function(options) {
 
 		options = $.extend({
-            blobOverlap : 10,
-            transitionSpeed : 1500,
+            overlap : 10,
+            speed : 1500,
             reset : 4000,
-            color : '#0b2b61'
+            color : '#0b2b61',
+            easing : 'easeOutElastic'
 		}, options);
 
 		return this.each(function() {
@@ -17,9 +18,9 @@
 
             $('<li id="blob"></li>').css({
                 width : currentPageItem.outerWidth(),
-                height : currentPageItem.outerHeight() + options.blobOverlap,
-                left : currentPageItem.position().left - 1,
-                top : currentPageItem.position().top - options.blobOverlap / 2,
+                height : currentPageItem.outerHeight() + options.overlap,
+                left : currentPageItem.position().left - 2,
+                top : currentPageItem.position().top - options.overlap / 2,
                 backgroundColor : options.color
             }).appendTo('#nav');
 
@@ -31,12 +32,12 @@
                     if ( $(e.target).is('a') ) {
                         blob.animate(
                             {
-                                left : $(e.target).position().left - 1,
-                                width : $(e.target).width()
+                                left : $(e.target).position().left - 2,
+                                width : $(e.target).parent('li').width()
                             },
                             {
-                                duration: 1500,
-                                easing : 'easeOutElastic',
+                                duration: options.speed,
+                                easing : options.easing,
                                 queue : false
                             }
                         );
@@ -48,7 +49,7 @@
                     blob.animate({
                             width : currentPageItem.outerWidth(),
                             left: currentPageItem.position().left
-                        }, options.transitionSpeed);
+                        }, options.speed);
                 }, options.reset);
             });
 
