@@ -42,6 +42,12 @@
 
             }, function(e) {
                 // mouse out
+
+                blob.stop().animate({
+                        left : $(this).position().left,
+                        width : $(this).width()
+                    }, options.speed);
+
                 reset = setTimeout(function() {
                     blob.animate({
                             width : currentPageItem.outerWidth(),
