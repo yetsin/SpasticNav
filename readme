@@ -2,3 +2,4 @@ This is a simple lava lamp style navigation menu, built with jQuery. To use, sim
 
 $('#nav').spasticNav();
 
+View the demo here: http://demo.jeffrey-way.com/spasticNav/
