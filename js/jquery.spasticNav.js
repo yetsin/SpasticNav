@@ -2,13 +2,13 @@
 
 	$.fn.spasticNav = function(options) {
 
-		options = $.extend({
+        options = $.extend({
             overlap : 20,
             speed : 500,
             reset : 4000,
             color : '#0b2b61',
             easing : 'easeOutExpo'
-		}, options);
+        }, options);
 
 		return this.each(function() {
             var nav = $(this),
@@ -26,7 +26,7 @@
 
             blob = $('#blob');
 
-            nav.find('li').hover(function() {
+            $('li', nav).hover(function() {
                 clearTimeout(reset);
                 blob.animate(
                     {
