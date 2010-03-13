@@ -2,4 +2,14 @@ This is a simple lava lamp style navigation menu, built with jQuery. To use, sim
 
 $('#nav').spasticNav();
 
+Overrides: 
+
+overlap : 20,
+speed : 500,
+reset : 4000,
+color : '#0b2b61',
+easing : 'easeOutExpo'
+
+
+
 View the demo here: http://demo.jeffrey-way.com/spasticNav/
